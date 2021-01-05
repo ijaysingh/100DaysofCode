@@ -1,0 +1,10 @@
+def answer(arr, n, k):
+    for i in range (0, len(k)):
+        for j in range (n):
+            print(arr[(j + k[i]) % n], end = " ")
+        print()
+
+n = int(input("Enter No. of Elements"))
+arr = list(map(int, input().split()))
+k = list(map(int, input().split()))
+answer(arr, n, k)
