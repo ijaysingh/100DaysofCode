@@ -1,0 +1,10 @@
+def problem(arr, n):
+    min = 0
+    for i in range(n - 1):
+        if arr[i] > arr[i + 1]:
+            min = arr[i + 1]
+    print(min)
+    
+n = int(input("Enter No. of Elements "))
+arr = list(map(int, input("Enter Elements ").split()))
+problem(arr, n)
