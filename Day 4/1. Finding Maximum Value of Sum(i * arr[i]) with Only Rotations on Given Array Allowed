@@ -1,0 +1,15 @@
+def answer(arr, n):
+    max = 0
+    
+    for i in range (n, 0, -1):
+        sum = 0
+        for j in range (n):
+            sum = sum + (arr[j] * ((j + i) % n))
+        if sum > max:
+            max = sum
+    return max
+        
+
+n = int(input("Enter No. of Elements"))
+arr = list(map(int, input().split(",")))
+print(answer(arr, n))
