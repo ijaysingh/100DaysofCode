@@ -1,0 +1,7 @@
+def reverse(arr, n):
+    for i in range (n):
+        print(arr[n - (i + 1)], end = " ")
+    
+n = int(input("Enter Length of Array"))
+arr = list(map(int, input("Enter Elements").split()))
+reverse(arr, n)
