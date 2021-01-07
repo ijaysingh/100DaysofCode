@@ -1,0 +1,9 @@
+def solution(arr, n):
+    arr.sort()
+    for i in range(0, n - 1, 2):
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    print(arr)
+    
+n = int(input("Enter Length of Array"))
+arr = list(map(int, input("Enter Elements").split()))
+solution(arr, n)
