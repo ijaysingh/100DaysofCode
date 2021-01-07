@@ -1,0 +1,17 @@
+def rearrange(arr, n):
+    i = -1
+    for j in range(n):
+        if arr[j] < 0:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    neg = 0
+    pos = i + 1
+    while (neg < pos and pos < n):
+        arr[neg], arr[pos] = arr[pos], arr[neg]
+        pos += 1
+        neg += 2
+    print(arr)
+
+n = int(input("Enter Length of Array"))
+arr = list(map(int, input("Enter Elements").split()))
+rearrange(arr, n)
