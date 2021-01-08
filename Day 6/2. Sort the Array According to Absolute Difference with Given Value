@@ -1,0 +1,12 @@
+def diff(arr, n, x):
+    m = {}
+    for i in range(n):
+        m[arr[i]] = (abs(x - arr[i]))
+    m = sorted(m.items(), key = lambda x : x[1])
+    for i in range(n):
+        print(m[i][0], end = " ")
+    
+n = int(input("Enter no. of Elements "))
+arr = list(map(int, input("Enter Elements ").split()))
+x = int(input())
+diff(arr, n, x)
