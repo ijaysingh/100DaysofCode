@@ -1,0 +1,14 @@
+def segregate(arr, n):
+    count = 0
+    for i in range(n):
+        if arr[i] == 0:
+            count += 1
+    for i in range(count):
+        arr[i] = 0
+    for i in range(count, n):
+        arr[i] = 1
+    return arr
+
+arr = list(map(int, input("Enter Elements").split()))
+n = len(arr)
+print(segregate(arr, n))  
