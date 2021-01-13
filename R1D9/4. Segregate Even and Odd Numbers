@@ -1,0 +1,16 @@
+def segregateevenodd(arr, n):
+    start = 0
+    end = n - 1
+    temp = n*[None]
+    for i in range(n):
+        if arr[i] % 2 == 0:
+            temp[start] = arr[i]
+            start += 1
+        else:
+            temp[end] = arr[i]
+            end -= 1
+    return temp
+
+arr = list(map(int, input("Enter Elements").split()))
+n = len(arr)
+print(segregateevenodd(arr, n)) 
