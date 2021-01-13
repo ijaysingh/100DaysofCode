@@ -1,0 +1,19 @@
+def rearrange(arr, n):
+    temp = n*[None]
+    start = 0
+    end = n - 1
+    flag = True
+    for i in range(n):
+        if flag == False:
+            temp[i] = arr[start]
+            start += 1
+            flag = True
+        else:
+            temp[i] = arr[end]
+            end -= 1
+            flag = False
+    print(temp)
+    
+arr = list(map(int, input("Enter Elements").split()))
+n = len(arr)
+rearrange(arr, n)
