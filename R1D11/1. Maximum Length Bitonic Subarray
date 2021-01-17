@@ -1,0 +1,26 @@
+def bitonicsubarray(arr, n):
+    inc = [None] * n
+    dec = [None] * n
+    inc[0] = 1
+    dec[n - 1] = 1
+    for i in range(1, n):
+        if arr[i] < arr[i - 1]:
+            inc[i] = 1
+        else:
+            inc[i] = inc[i - 1] + 1
+            
+    for i in range(n - 2, -1, -1):
+        if arr[i] < arr[i + 1]:
+            dec[i] = 1
+        else:
+            dec[i] = dec[i + 1] + 1
+        
+    max = -1
+    for i in range(n):
+        if max < ((inc[i] + dec[i]) - 1):
+            max = ((inc[i] + dec[i]) - 1)
+    return max
+
+arr = list(map(int,input("Enter Elements").split()))
+n = len(arr)
+print(bitonicsubarray(arr, n))
