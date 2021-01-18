@@ -1,0 +1,32 @@
+#the code is not correct it is the 12th day progress of this challenge
+def subsequence(arr, n):
+    inc = [None] * n
+    dec = [None] * n
+    inc[0] = mi = arr[0]
+    dec[n - 1] = ma = arr[n - 1]
+    
+    for i in range(1, n):
+        if arr[i] < mi:
+            inc[i] = arr[i]
+            mi = arr[i]
+        else:
+            inc[i] = mi
+            
+    for i in range(n - 2, -1, -1):
+        if arr[i] > ma:
+            dec[i] = arr[i]
+            ma = arr[i]
+        else:
+            dec[i] = ma
+            
+    print(inc)
+    print(dec)
+            
+    for i in range(n):
+        if inc[i] < arr[i] & dec[i] > arr[i]:
+            break
+    return i
+
+arr = list(map(int, input("Enter Elements").split()))
+n = len(arr) 
+print(subsequence(arr, n))
