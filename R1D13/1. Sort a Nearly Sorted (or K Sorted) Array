@@ -1,0 +1,19 @@
+from heapq import heappop, heappush, heapify
+
+def sort_array(arr, n, k):
+    heap = arr[:k + 1]
+    heapify(heap)
+    target_index = 0
+    for i in range(k + 1, n):
+        arr[target_index] = heappop(heap)
+        heappush(heap, arr[i])
+        target_index += 1
+    while heap:
+        arr[target_index] = heappop(heap)
+        target_index += 1
+        
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+sort_array(arr, n, k)
+print(arr)
