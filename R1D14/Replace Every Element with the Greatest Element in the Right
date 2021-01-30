@@ -1,0 +1,11 @@
+def replace(arr, n):
+    rightmax = -1
+    for i in range (n - 1, -1, -1):
+        newmax = max(rightmax, arr[i])
+        arr[i] = rightmax
+        rightmax = newmax
+    print(arr)
+
+arr = list(map(int, input().split()))
+n = len(arr)
+replace(arr, n)
