@@ -1,0 +1,17 @@
+def count(list):
+    d = {}
+    for i in list:
+        if d.get(i, 0) == 0:
+            d[i] = 1
+        else:
+            d[i] += 1
+    for i in d:
+        if d[i] % 2 == 0:
+            return i
+            break
+    else:
+        return -1
+       
+num = int(input())
+arr = list(map(int, input().split()))
+print(count(arr))
