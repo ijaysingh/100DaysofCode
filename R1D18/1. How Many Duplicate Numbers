@@ -5,6 +5,6 @@ def duplicate(arr):
     print(s)
     return (len(arr) - len(s))
     
-    n = int(input())
+n = int(input())
 arr = list(map(int, input().split()))
 print(duplicate(arr))
