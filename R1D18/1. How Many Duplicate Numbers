@@ -1,0 +1,10 @@
+def duplicate(arr):
+    s = set()
+    for i in arr:
+        s.add(i)
+    print(s)
+    return (len(arr) - len(s))
+    
+    n = int(input())
+arr = list(map(int, input().split()))
+print(duplicate(arr))
