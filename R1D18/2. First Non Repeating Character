@@ -1,0 +1,13 @@
+def repeat(string):
+    d = {}
+    for i in string:
+        if d.get(i, 0) == 0:
+            d[i] = 1
+        else:
+            d[i] += 1
+    for i in sring:
+        if d[i] == 1:
+            return i
+            
+string = input()
+print(repeat(string))
